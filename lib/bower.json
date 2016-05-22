@@ -1,0 +1,21 @@
+{
+  "name": "lib",
+  "description": "Angular address book application using MaterializeCSS",
+  "main": "index.js",
+  "authors": [
+    "Katye Russell <katye.russell@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/complikatyed/ng-address-app",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.4",
+    "angular-route": "^1.5.5"
+  }
+}
