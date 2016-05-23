@@ -1,32 +1,34 @@
-<h1>Add New Contact</h1>
-  <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s4 offset-s1">
-          <input id="first_name" type="text" ng-model="newContact.firstName">
-          <label for="first_name">First Name</label>
+<div class="container">
+  <h1>Add New Contact</h1>
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s4 offset-s1">
+            <input id="first_name" type="text" ng-model="newContact.firstName">
+            <label for="first_name">First Name</label>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s4 offset-s1">
-          <input id="last_name" type="text" ng-model="newContact.lastName">
-          <label for="last_name">Last Name</label>
+        <div class="row">
+          <div class="input-field col s4 offset-s1">
+            <input id="last_name" type="text" ng-model="newContact.lastName">
+            <label for="last_name">Last Name</label>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s4 offset-s1">
-          <input id="cell_phone" type="text" ng-model="newContact.cellPhone">
-          <label for="cell_phone">Cell Phone</label>
+        <div class="row">
+          <div class="input-field col s4 offset-s1">
+            <input id="cell_phone" type="text" ng-model="newContact.cellPhone">
+            <label for="cell_phone">Cell Phone</label>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s4 offset-s1">
-          <input id="home_phone" type="text" ng-model="newContact.homePhone">
-          <label for="home_phone">Home Phone</label>
+        <div class="row">
+          <div class="input-field col s4 offset-s1">
+            <input id="home_phone" type="text" ng-model="newContact.homePhone">
+            <label for="home_phone">Home Phone</label>
+          </div>
         </div>
-      </div>
-    <button class="btn waves-effect waves-light" type="submit" name="action" ng-click="addNewContact()">Submit
-      <i class="material-icons right">send</i>
-    </button>
-  </form>
+      <button class="btn waves-effect waves-light" type="submit" name="action" ng-click="addNewContact()">Submit
+        <i class="material-icons right">send</i>
+      </button>
+    </form>
+  </div>
 </div>
