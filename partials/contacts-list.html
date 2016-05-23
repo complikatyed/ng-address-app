@@ -10,18 +10,51 @@
   </form>
 </div>
 
+<div class="row">
+  <div class="col s4 offset-s1">
+    <button ng-click="cards = !cards">Show Cards</button>
+  </div>
+</div>
+
 <div class="container">
-  <div ng-repeat="contact in contacts | filter: searchText">
-    <div class="row">
-      <div class="col s4 offset-s3">
-        <div class="card #5e35b1 deep-purple  darken-1">
-          <div class="card-content white-text">
-            <span class="card-title">{{contact.firstName}} {{contact.lastName}}</span>
-            <p>Cell: {{contact.cellPhone}}</p>
-            <p>Home: {{contact.homePhone}}</p>
+    <div ng-show="cards" class="row">
+      <div ng-repeat="contact in contacts | filter: searchText">
+        <div class="col s4 offset-s3">
+          <div class="card #5e35b1 deep-purple  darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">{{contact.firstName}} {{contact.lastName}}</span>
+              <p>Cell: {{contact.cellPhone}}</p>
+              <p>Home: {{contact.homePhone}}</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
+    <div ng-show="!cards" class="row">
+      <div>
+        <div class="col s6 offset-s2">
+        <table>
+          <thead>
+            <tr>
+              <th data-field="id">Name</th>
+              <th data-field="name">Cell Phone</th>
+              <th data-field="price">Home Phone</th>
+            </tr>
+          </thead>
+          <tbody ng-repeat="contact in contacts | filter: searchText">
+            <tr>
+              <td>{{contact.firstName}} {{contact.lastName}}</td>
+              <td>{{contact.cellPhone}}</td>
+              <td>{{contact.homePhone}}</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
+
+
