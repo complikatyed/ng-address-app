@@ -1,0 +1,27 @@
+<h1>Current Contacts</h1>
+
+ <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Search for..." type="text" ng-model="searchText">
+        </div>
+    </div>
+  </form>
+</div>
+
+<div class="container">
+  <div ng-repeat="contact in contacts | filter: searchText">
+    <div class="row">
+      <div class="col s4 offset-s3">
+        <div class="card #5e35b1 deep-purple  darken-1">
+          <div class="card-content white-text">
+            <span class="card-title">{{contact.firstName}} {{contact.lastName}}</span>
+            <p>Cell: {{contact.cellPhone}}</p>
+            <p>Home: {{contact.homePhone}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
