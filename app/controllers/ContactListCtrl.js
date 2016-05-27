@@ -1,24 +1,30 @@
-app.controller('ContactListCtrl', function($scope){
+'use strict';
 
-$scope.contacts = [
-    {
-      firstName: "Mara",
-      lastName: "Russell",
-      cellPhone: "615-999-0300",
-      homePhone: "615-915-2614"
-    },
-    {
-      firstName: "Meg",
-      lastName: "Benningfield",
-      cellPhone: "615-612-8322",
-      homePhone: "615-915-3404"
-    },
-    {
-      firstName: "Mary",
-      lastName: "McCullough",
-      cellPhone: "615-364-5631",
-      homePhone: "615-226-1789"
-    }
-  ];
+app.controller('ContactListCtrl', function($scope, contactStorage){
+
+  $scope.contacts = [];
+
+  contactStorage.getContactList().then(function(contactData) {
+    $scope.contacts = contactData;
+  });
+
+
 
 });
+
+
+//   $scope.itemDelete = function(itemId) {
+//     itemStorage.deleteItem(itemId).then(function(response) {
+//       itemStorage.getItemList().then(function(itemCollection) {
+//         $scope.items = itemCollection;
+//       });
+//     });
+//   };
+
+//   $scope.inputChange = function(item) {
+//     itemStorage.updateCompletedStatus(item).then(function(response) {
+
+//     });
+//   };
+
+// });
