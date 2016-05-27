@@ -1,6 +1,7 @@
 'use strict';
 
-var app = angular.module('AddressApp', ['ngRoute']);
+var app = angular.module('AddressApp', ['ngRoute'])
+  .constant("firebaseURL", "https://groovyphonebook.firebaseio.com/");;
 
 app.config(function($routeProvider){
   $routeProvider.
