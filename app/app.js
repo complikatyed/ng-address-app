@@ -1,3 +1,5 @@
+'use strict';
+
 var app = angular.module('AddressApp', ['ngRoute']);
 
 app.config(function($routeProvider){
