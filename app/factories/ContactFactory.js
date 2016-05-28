@@ -11,7 +11,7 @@ app.factory("contactStorage", function($q, $http, firebaseURL) {
         .get(firebaseURL + "contacts.json")
         // --- on success, we now have access to the contacts data as an object --- //
         .success(function(objectFromFirebase) {
-          console.log(objectFromFirebase);
+
           var contactData = objectFromFirebase;
           // --- Uses the Object.keys method to loop through the object --- //
 
@@ -61,10 +61,26 @@ app.factory("contactStorage", function($q, $http, firebaseURL) {
     });
   };
 
+  var getSingleContact = function(contactId){
+    return $q(function(resolve, reject) {
+      console.log("Things");
+      $http
+        .get(firebaseURL + "contacts/" + contactId + ".json")
+        .success(function(contactObject){
+          console.log(contactObject);
+          resolve(contactObject);
+        })
+        .error(function(error){
+          console.log("broken");
+          reject(error);
+        });
+    });
+  };
 
 
 
-  return {getContactList:getContactList, deleteContact:deleteContact, postNewContact:postNewContact};
+
+  return {getSingleContact:getSingleContact, getContactList:getContactList, deleteContact:deleteContact, postNewContact:postNewContact};
 
 });
 
