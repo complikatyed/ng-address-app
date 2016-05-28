@@ -21,5 +21,5 @@ app.controller('ContactListCtrl', function($scope, contactStorage){
 
     });
   };
-  
+
 });
