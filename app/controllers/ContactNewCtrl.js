@@ -1,16 +1,19 @@
 'use strict';
 
-app.controller('ContactNewCtrl', function($scope){
+app.controller('ContactNewCtrl', function($scope, $location, contactStorage){
 
-  $scope.newContact = {};
+  $scope.newContact = {
+    firstName: "",
+    lastName: "",
+    cellPhone: "",
+    homePhone: ""
+  };
 
-  $scope.contacts = [];
-
-  $scope.addNewContact = function() {
-    $scope.newContact.id = $scope.contacts.length;
-    $scope.contacts.push($scope.newContact);
-    console.log($scope.contacts);
-    $scope.newContact = '';
+  $scope.addNewContact = function(){
+    contactStorage.postNewContact($scope.newContact)
+      .then(function successCallback(response) {
+        $location.url("/contacts/list");
+      });
   };
 
 });

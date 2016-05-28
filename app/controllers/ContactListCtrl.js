@@ -8,23 +8,18 @@ app.controller('ContactListCtrl', function($scope, contactStorage){
     $scope.contacts = contactData;
   });
 
+  $scope.contactDelete = function(contactId) {
+    contactStorage.deleteContact(contactId).then(function(response) {
+      contactStorage.getContactList().then(function(objectFromFirebase) {
+        $scope.contacts = objectFromFirebase;
+      });
+    });
+  };
 
+  $scope.inputChange = function(contact) {
+    contactStorage.updateCompletedStatus(contact).then(function(response) {
+
+    });
+  };
 
 });
-
-
-//   $scope.itemDelete = function(itemId) {
-//     itemStorage.deleteItem(itemId).then(function(response) {
-//       itemStorage.getItemList().then(function(itemCollection) {
-//         $scope.items = itemCollection;
-//       });
-//     });
-//   };
-
-//   $scope.inputChange = function(item) {
-//     itemStorage.updateCompletedStatus(item).then(function(response) {
-
-//     });
-//   };
-
-// });

@@ -13,6 +13,10 @@ app.config(function($routeProvider){
       templateUrl: 'partials/contact-new.html',
       controller: 'ContactNewCtrl'
     }).
+    when('/contacts/:contactId', {
+      templateUrl: 'partials/contact-details.html',
+      controller: 'ContactViewCtrl'
+    }).
     otherwise('/contacts/list');
 }
 );

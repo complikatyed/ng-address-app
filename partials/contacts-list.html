@@ -25,6 +25,9 @@
               <span class="card-title">{{contact.firstName}} {{contact.lastName}}</span>
               <p>Cell: {{contact.cellPhone}}</p>
               <p>Home: {{contact.homePhone}}</p>
+
+              <span class="right"><a ng-href="#/contacts/{{contact.id}}"><i class="small material-icons">info</i></a></span>
+              <span class="right"><a ng-click="contactDelete(contact.id)"><i class="small material-icons">delete</i></a></span>
             </div>
           </div>
         </div>
@@ -47,6 +50,8 @@
               <td>{{contact.firstName}} {{contact.lastName}}</td>
               <td>{{contact.cellPhone}}</td>
               <td>{{contact.homePhone}}</td>
+              <td><a ng-href="#/contacts/{{contact.id}}"><i class="tiny material-icons">info</i></a></td>
+              <td><a ng-click="contactDelete(contact.id)"><i class="tiny material-icons">delete</i></a></td>
             </tr>
           </tbody>
         </table>
