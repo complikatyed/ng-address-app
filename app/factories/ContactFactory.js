@@ -42,12 +42,29 @@ app.factory("contactStorage", function($q, $http, firebaseURL) {
     });
   };
 
+  var postNewContact = function(newContact){
+    return $q(function(resolve, reject) {
+      $http
+        .post(firebaseURL + "contacts.json",
+          JSON.stringify({
+            firstName: newContact.firstName,
+            lastName: newContact.lastName,
+            cellPhone: newContact.cellPhone,
+            homePhone: newContact.homePhone,
+          }))
+        .success(function(objectFromFirebase) {
+          resolve(objectFromFirebase);
+        })
+        .error(function(error) {
+          reject(error);
+        });
+    });
+  };
 
 
 
 
-
-  return {getContactList:getContactList, deleteContact:deleteContact};
+  return {getContactList:getContactList, deleteContact:deleteContact, postNewContact:postNewContact};
 
 });
 

@@ -16,7 +16,10 @@ app.controller('ContactListCtrl', function($scope, contactStorage){
     });
   };
 
+  $scope.inputChange = function(contact) {
+    contactStorage.updateCompletedStatus(contact).then(function(response) {
 
-
-
+    });
+  };
+  
 });
